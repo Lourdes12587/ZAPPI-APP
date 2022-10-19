@@ -1,0 +1,101 @@
+body {
+    font-family: 'LatoRegular';
+    margin: 0;
+    padding: 0;
+    background-color: #4D4D4D;
+}
+
+.seccion-lista-pedis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.seccion-lista-pedis h2 {
+    text-align: center;
+    font-family: 'LatoThin';
+    color: #FFFFFF;
+    font-size: 3em;
+    margin-top: 100px;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    color: #4D4D4D;
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 0px 17px 2px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 10px;
+    border-radius: 20px;
+    transition: transform 150ms ease-in;
+    min-width: 250px;
+}
+
+.card img {
+    width: 80%;
+    transition: transform 150ms ease-in;
+}
+
+.card h3 {
+    font-family: 'LatoLight';
+    font-size: 1.5em;
+    color:#FFFFFF
+}
+
+.card h4 {
+    font-family: 'LatoLight';
+    font-size: 1.5em;
+    color: black;
+}
+
+.card p {
+    font-family: 'Lato';
+    font-size: 2em;
+    color: #FB103D;
+}
+
+.card button {
+    width: 70%;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #FB103D;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: 'LatoRegular';
+    min-width: 100px;
+}
+
+.card button:hover{
+    background-color: #FFA100;
+    cursor: pointer;
+    color: black;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+.card:hover .agotado {
+    transform: scale(1.2);
+}
