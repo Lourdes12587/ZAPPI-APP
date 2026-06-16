@@ -1,8 +1,17 @@
 const storageKey = "el-gordo-cart";
 const shippingCost = 900;
 
+const getSavedCart = () => {
+  try {
+    return JSON.parse(localStorage.getItem(storageKey)) || [];
+  } catch (error) {
+    localStorage.removeItem(storageKey);
+    return [];
+  }
+};
+
 const state = {
-  cart: (JSON.parse(localStorage.getItem(storageKey)) || [])
+  cart: getSavedCart()
     .map((savedItem) => {
       const product = products.find((item) => item.id === Number(savedItem.id));
       return product ? { ...product, quantity: savedItem.quantity || 1 } : null;
