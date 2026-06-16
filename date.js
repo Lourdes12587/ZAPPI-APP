@@ -6,7 +6,7 @@ const productImages = {
   burgerDark: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85",
   burgerFries: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
   fries: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
-  potatoFries: "https://source.unsplash.com/900x620/?french-fries,loaded-fries",
+  potatoFries: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=900&q=85",
   loadedFries: "https://pub-aaa82e9851064d22b954c3ebbafc9ae6.r2.dev/legacy/webp/loaded-cheesy-bacon-fries-for-every-craving-qRw1BmG1F0CUfPyO-P-b2.webp",
   wrap: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85",
   taco: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=900&q=85",
