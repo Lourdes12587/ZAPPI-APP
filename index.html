@@ -1,74 +1,159 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="index.css">
-<title>NucbaZappi</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>El Gordo Zappi</title>
 </head>
 
 <body>
-<section class="seccion-lista-pedis" id="lista_pedis">
-    <h2>Los mas popular</h2>
-    <div class="container-cards">
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>La Mr.Pit</h3>
-            <h4>Solo para expertos</h4>
-            <p>$ 350</p>
-            <button>Agregar</button>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegacion principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand__logo" src="./assets/logo-el-gordo-zappi.svg" alt="El Gordo Zappi" />
+      </a>
+      <div class="nav__actions">
+        <a class="nav__link" href="#productos">Menu</a>
+        <a class="nav__link" href="#checkout">Checkout</a>
+        <button class="cart-button" id="open-cart" type="button" aria-label="Abrir carrito">
+          <span class="cart-button__icon" aria-hidden="true">🛒</span>
+          <span class="cart-button__count" id="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero container">
+      <div class="hero__content">
+        <span class="eyebrow">Delivery caliente en minutos</span>
+        <h1>Pedite algo rico en El Gordo.</h1>
+        <p>Pizza, burgers, papas y batidos con el mismo fuego visual del proyecto original, ahora con carrito real y checkout listo.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#productos">Ver productos</a>
+          <button class="button button--ghost" id="quick-add" type="button">Sumar combo</button>
         </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>¡Q' Jamone!</h3>
-            <h4>c/jamon crudo</h4>
-            <p>$ 350</p>
-            <button>Agregar</button>
+      </div>
+      <div class="hero__visual" aria-label="Combo destacado">
+        <div class="plate plate--pizza">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85" alt="Pizza artesanal" />
         </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>La Charly Garcia</h3>
-            <h4>¡BASTA!</h4>
-            <p>$ 380</p>
-            <button>Agregar</button>
+        <div class="plate plate--burger">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Hamburguesa gourmet" />
         </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>La Maradona</h3>
-            <h4>¡Eterna!</h4>
-            <p>$ 450</p>
-            <button>Agregar</button>
+      </div>
+    </section>
+
+    <section class="toolbar container" aria-label="Buscar y filtrar productos">
+      <div class="search">
+        <label for="search-products">Buscar</label>
+        <input id="search-products" type="search" placeholder="Pizza, burger, papas..." autocomplete="off" />
+      </div>
+      <div class="delivery-pill">
+        <span aria-hidden="true">⚡</span>
+        Envio estimado: 25-35 min
+      </div>
+    </section>
+
+    <section class="categories container" aria-labelledby="categories-title">
+      <div class="section-heading">
+        <h2 id="categories-title">Categorias</h2>
+        <p>Filtra el menu por antojo.</p>
+      </div>
+      <div class="categories__cards" id="categories"></div>
+    </section>
+
+    <section class="recommended container" aria-labelledby="recommended-title">
+      <div class="section-heading">
+        <h2 id="recommended-title">Hoy salen fuerte</h2>
+        <p>Los favoritos para agregar rapido.</p>
+      </div>
+      <div class="recommended__cards" id="recommended-products"></div>
+    </section>
+
+    <section class="products container" id="productos" aria-labelledby="products-title">
+      <div class="section-heading section-heading--row">
+        <div>
+          <h2 id="products-title">Menu completo</h2>
+          <p id="products-result">Todos los productos disponibles.</p>
         </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>Picantovich</h3>
-            <h4>Pica 2 veces</h4>
-            <p>$ 750</p>
-            <button>Agregar</button>
-        </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>La Hasbulla</h3>
-            <h4>En horno al 1</h4>
-            <p>$ 990</p>
-            <button>Agregar</button>
-        </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>Leo Messi</h3>
-            <h4>¡De pie señores!</h4>
-            <p>$ 10</p>
-            <button>Agregar</button>
-        </div>
-        <div class="card">
-            <img src="" alt="Pizza">
-            <h3>Nick Gi</h3>
-            <h4>La que desaparece</h4>
-            <p>$ Gratis</p>
-            <button>Agregar</button>
-        </div>
+        <button class="button button--small" id="clear-filters" type="button">Ver todo</button>
+      </div>
+      <div class="products__grid" id="products-grid"></div>
+    </section>
+
+    <section class="checkout-preview container" id="checkout" aria-labelledby="checkout-title">
+      <div>
+        <span class="eyebrow">Checkout</span>
+        <h2 id="checkout-title">Tu pedido queda armado en el carrito.</h2>
+        <p>Agrega productos, ajusta cantidades y confirma con tus datos de entrega. El resumen se guarda en este navegador.</p>
+      </div>
+      <button class="button button--primary" id="open-cart-bottom" type="button">Abrir carrito</button>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart__header">
+      <div>
+        <span class="eyebrow">Tu pedido</span>
+        <h2>Carrito</h2>
+      </div>
+      <button class="icon-button" id="close-cart" type="button" aria-label="Cerrar carrito">×</button>
     </div>
-</section>  
-<script src="./main.Js"></script>
+
+    <div class="cart__main" id="cart-items"></div>
+
+    <form class="checkout-form" id="checkout-form">
+      <label>
+        Nombre
+        <input type="text" name="name" placeholder="Tu nombre" required />
+      </label>
+      <label>
+        Direccion
+        <input type="text" name="address" placeholder="Calle y numero" required />
+      </label>
+      <label>
+        Pago
+        <select name="payment" required>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Mercado Pago">Mercado Pago</option>
+          <option value="Tarjeta">Tarjeta</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="cart__summary">
+      <div><span>Subtotal</span><strong id="subtotal">$ 0</strong></div>
+      <div><span>Envio</span><strong id="shipping">$ 0</strong></div>
+      <div class="cart__total"><span>Total</span><strong id="total">$ 0</strong></div>
+    </div>
+
+    <div class="cart__actions">
+      <button class="button button--primary" id="finish-order" type="submit" form="checkout-form">Confirmar pedido</button>
+      <button class="button button--ghost" id="clear-cart" type="button">Vaciar</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer container">
+    <div class="footer__links">
+      <a href="#productos">Menu</a>
+      <a href="#checkout">Checkout</a>
+      <a href="#inicio">Inicio</a>
+    </div>
+    <p>Hecho con fuego en <strong>El Gordo Zappi</strong></p>
+  </footer>
+
+  <script src="./date.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
